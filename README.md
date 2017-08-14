@@ -1,0 +1,2 @@
+# ScalaGround
+scala もはじめちゃうよー
