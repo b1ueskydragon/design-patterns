@@ -1,2 +1,1 @@
-# ScalaGround
-scala もはじめちゃうよー
+配信やるぞ！
