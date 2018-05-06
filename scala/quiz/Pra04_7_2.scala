@@ -6,7 +6,7 @@ object Pra04_7_2 {
   def main(args: Array[String]): Unit = {
     val list = generate(0 to 40 toList)
     println(list)
-    println(list.filter(e => !isPrime(e)))
+    println(list.filter(!isPrime(_)))
   }
 
   def func(x: Int): Int = x * x + x + 41
@@ -18,4 +18,7 @@ object Pra04_7_2 {
   }
 
   def isPrime(n: Int): Boolean = (2 to math.sqrt(n).toInt).forall(n % _ != 0)
+
+  // slow ?
+  def isPrime_(n: Long): Boolean = n > 1 && (n == 2 || (3L to math.sqrt(n).toLong by 2).forall(n % _ != 0))
 }
