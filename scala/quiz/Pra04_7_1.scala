@@ -6,9 +6,14 @@ object Pra04_7_1 {
     println(comprehension(1 to 10 toList))
   }
 
-  def factorial(n: Int): Int = n match {
-    case _ if n < 1 => 1
-    case _ => n * factorial(n - 1)
+  def factorial(n: Int): Int = {
+    // accumulating
+    def _tailRec(stack: Int, n: Int): Int = {
+      if (n < 1) stack
+      else _tailRec(stack * n, n - 1)
+    }
+
+    _tailRec(1, n)
   }
 
   def comprehension(nums: List[Int]): List[Int] = {
