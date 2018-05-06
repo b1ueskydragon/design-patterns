@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException
 import java.nio.file.{Files, Path, Paths}
 
-import io.Source
+import scala.io.Source
 import scala.util.Try
 
 class LazyPra {
