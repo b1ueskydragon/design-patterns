@@ -4,18 +4,15 @@ package quiz
 // すなわち "a", "aa", "aaa", "b", "bb", "bbb", "c", "cc", "ccc" を求める．
 object Pra04_7_3 {
   def main(args: Array[String]): Unit = {
-    println(generates(List("a", "b", "c"), 3))
+    println(generates(List("a", "b", "c"), 3).flatten)
   }
 
-  // 別関数
   def generates(words: List[String], n: Int): List[List[String]] = {
     for {
       word <- words
     } yield generate3(word, n)
   }
 
-  // 文字一つに対する処理
-  // あとで別関数に渡す
   def generate3(word: String, n: Int): List[String] = {
     def _rec(stack: String, rst: List[String], n: Int): List[String] = {
       if (n == 0) rst.reverse
