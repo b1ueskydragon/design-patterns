@@ -4,7 +4,11 @@ package quiz
 // すなわち "a", "aa", "aaa", "b", "bb", "bbb", "c", "cc", "ccc" を求める．
 object Pra04_7_3 {
   def main(args: Array[String]): Unit = {
-    println(generates(List("a", "b", "c"), 3).flatten)
+    val sample = List("a", "b", "c")
+    // recursion
+    println(generates(sample, 3).flatten)
+    // functional
+    println(for (s <- sample; n <- 1 to 3) yield s * n)
   }
 
   def generates(words: List[String], n: Int): List[List[String]] = {
