@@ -17,6 +17,17 @@ object Pra04_7_4 {
       } yield 100 * i3 + 10 * i2 + i1
     )
 
+    // same as above
+    println(
+      for {
+        i3 <- 1 to 9
+        i2 <- 0 to 9
+        i1 <- 0 to 9
+
+        if i3 + i2 + i1 == 10
+        stack <- Vector(100 * i3 + 10 * i2 + i1)
+      } yield stack
+    )
   }
 
   // each num
