@@ -1,6 +1,6 @@
 package graffiti
 
-object ForMap {
+object FlatMapPra {
   def main(args: Array[String]): Unit = {
 
     val a =
@@ -19,6 +19,16 @@ object ForMap {
 
     println(a)
     println(b)
+
+
+    val c =
+      for {
+        a <- List.range(1, 4)
+        b <- List.range(1, 4)
+        c <- List.range(1, 4) // もっとも変化が早い
+      } yield (a, b, c)
+
+    println(c)
   }
 
   // 複数のジェネレータ(p <- e) がある場合,
