@@ -3,6 +3,20 @@ package graffiti
 object FlatMapPra {
   def main(args: Array[String]): Unit = {
 
+    val z = List.range(1, 3) flatMap {
+      i =>
+        List(i) map {
+          j => j * 2
+        }
+    }
+
+    val y = List.range(1, 3) flatMap {
+      i => List(i * 2)
+    }
+
+    println(z)
+    println(y)
+
     val a =
       List.range(1, 5) flatMap {
         i =>
