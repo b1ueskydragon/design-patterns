@@ -1,7 +1,7 @@
 package quiz
 
 // n=100 の時， ∑n i=1 1/i を計算せよ
-object Pra04_3_10 {
+object Pra04_03_10 {
   def main(args: Array[String]): Unit = {
     val n = 100
 

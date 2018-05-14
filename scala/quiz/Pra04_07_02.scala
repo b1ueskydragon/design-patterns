@@ -2,7 +2,7 @@ package quiz
 
 // forを用いて0から40までの整数 x について x2+x+41 を要素とするリストを求めよ.
 // また，それらのうち素数でない数のリストを求めよ．
-object Pra04_7_2 {
+object Pra04_07_02 {
   def main(args: Array[String]): Unit = {
     val list = generate(0 to 40 toList)
     println(list)

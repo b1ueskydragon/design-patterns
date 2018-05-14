@@ -1,7 +1,7 @@
 package quiz
 
 // 3桁の整数で，各桁の数の和が10に等しいものを求めよ．
-object Pra04_7_4 {
+object Pra04_07_04 {
   def main(args: Array[String]): Unit = {
     // recursive search
     println((100 to 999 toList).filter(n => sum3digit(n) == 10))

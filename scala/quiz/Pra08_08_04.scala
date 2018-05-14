@@ -4,7 +4,7 @@ package quiz
 
 // ヒント: 空リストは List[Int]() で表す．
 // foldLeft(init)(func)
-object Pra08_8_4 {
+object Pra08_08_04 {
   def main(args: Array[String]): Unit = {
     val smp = List(2, 7, 1, 8)
     println(smp.foldLeft(0)(_ + _)) // smp.sum

@@ -1,7 +1,7 @@
 package quiz
 
 // forを用いて 1! から 10! までを要素とするリスト(あるいはVector)を求めよ．
-object Pra04_7_1 {
+object Pra04_07_01 {
   def main(args: Array[String]): Unit = {
     println(comprehension(1 to 10))
   }

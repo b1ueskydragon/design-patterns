@@ -1,7 +1,7 @@
 package quiz
 
 // reduceLeftを用いて，要素リストを連結したリストを求める.
-object Pra08_8_3 {
+object Pra08_08_03 {
   def main(args: Array[String]): Unit = {
     val lists = List(List(3, 1, 4), List(2, 7, 1, 8, 2, 8), List(0, 5, 7, 7))
 
