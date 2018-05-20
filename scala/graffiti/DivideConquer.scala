@@ -7,6 +7,10 @@ object DivideConquer {
     println(append(origin, add))
   }
 
+  // Divide →
+  //                         ← Conquer
+  // a :: b :: c :: d :: List(e, f, g)
+  // stack of xs.head [d, c, b, d]
   def append[A](xs: List[A], ys: List[A]): List[A] = xs match {
     case List() => ys
     case h :: tail => h :: append(tail, ys)
