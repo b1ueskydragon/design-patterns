@@ -1,3 +1,6 @@
 .idea
 out/
 *.iml
+
+# practice
+scala/ignore/
