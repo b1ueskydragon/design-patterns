@@ -6,10 +6,6 @@ object Pra08_01_07 {
     val matrix = List(List(3, 1, 4, 1), List(2, 7, 1, 8), List(0, 5, 7, 7))
     // (3, 2, 0) (1, 7, 5) (4, 1, 7) (1, 8, 7)
 
-//    val res = matrix map {
-//      _.head
-//    }
-
     val res = for {
       idx <- matrix.head.indices
     } yield matrix.map(_ (idx))
