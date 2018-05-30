@@ -13,6 +13,9 @@ object Pra04_03_13 {
       } yield 1.0 / i
 
     println(res)
+
+    // TODO
+    println((20 to 0 by -1).map(n => (1 to n).map(1.0 / _).product))
   }
 
   def product[T: Numeric](n: T): T = {
