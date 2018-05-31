@@ -15,7 +15,7 @@ object Pra04_03_13 {
 
     // Use manual definition ver.
     // error exists
-    val res_ = 1 + sum((for (i <- 1 to n) yield 1.0 / product(i)).toList)
+    val res_ = 1 + sum((1 to n).map(1.0 / product(_)).toList)
     println(res_)
 
 
