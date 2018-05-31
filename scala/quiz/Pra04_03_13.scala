@@ -10,6 +10,7 @@ object Pra04_03_13 {
     lazy val n = 20
 
     // error exists
+    // TODO Try memoization
     val res = 1 + (for (i <- 1 to n) yield 1.0 / (1 to i).product).sum
     println(res)
 
@@ -21,9 +22,7 @@ object Pra04_03_13 {
 
     //Number of Napier.
     val rst = (n to 0 by -1).map { i =>
-      (1 to i).map {
-        1.0 / _
-      }.product
+      (1 to i).map(d => 1.0 / d).product
     }
     println(rst.sum)
     println(Math.E)
