@@ -1,6 +1,7 @@
 package quiz
 
 import scala.annotation.tailrec
+import scala.collection.mutable
 
 object SeriesCalcTr {
   def product[T: Numeric](n: T): T = {
@@ -28,5 +29,31 @@ object SeriesCalcTr {
     }
 
     _tRec(list, _i.zero)
+  }
+
+  private val table = new mutable.HashMap[Int, Int]
+
+  def productMemo(range: Int): Int = {
+    if (range == 0) 0
+    else if (range == 1) 1
+    else {
+      range match {
+        case n if table.contains(n - 1) =>
+          table.getOrElse(n - 1, 0) * n
+        case n =>
+          val rst = productMemo(n - 1) * n
+          table.update(n, rst)
+          rst
+      }
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    println(table)
+    println(productMemo(5))
+    println(table)
+    println(productMemo(6))
+    println(table)
+
   }
 }
