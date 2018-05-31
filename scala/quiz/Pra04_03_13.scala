@@ -11,6 +11,7 @@ object Pra04_03_13 {
 
     // error exists
     // TODO Try memoization
+    // TODO Fix error (on product calculation)
     val res = 1 + (for (i <- 1 to n) yield 1.0 / (1 to i).product).sum
     println(res)
 
