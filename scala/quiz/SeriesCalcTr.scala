@@ -31,21 +31,12 @@ object SeriesCalcTr {
     _tRec(list, _i.zero)
   }
 
-  private val table = new mutable.HashMap[Int, Int]
+  lazy val table = new mutable.HashMap[Int, Int]
 
-  def productMemo(range: Int): Int = {
-    if (range == 0) 0
-    else if (range == 1) 1
-    else {
-      range match {
-        case n if table.contains(n - 1) =>
-          table.getOrElse(n - 1, 0) * n
-        case n =>
-          val rst = productMemo(n - 1) * n
-          table.update(n, rst)
-          rst
-      }
-    }
+  def productMemo(range: Int): Int = range match {
+    case n if n == 0 => 0
+    case n if n == 1 => 1
+    case n => table.getOrElseUpdate(n, productMemo(n - 1) * n)
   }
 
   def main(args: Array[String]): Unit = {
@@ -54,6 +45,9 @@ object SeriesCalcTr {
     println(table)
     println(productMemo(6))
     println(table)
-
+    println(productMemo(10))
+    println(table)
+    println(productMemo(8))
+    println(table)
   }
 }
