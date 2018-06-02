@@ -20,12 +20,14 @@ object Pra04_03_13 {
     val res_ = 1 + sum((1 to n).map(1.0 / product(_)).toList)
     println(res_)
 
-
     //Number of Napier.
     val rst = (n to 0 by -1).map { i =>
       (1 to i).map(d => 1.0 / d).product
     }
     println(rst.sum)
     println(Math.E)
+
+    val res__ = (0 to n).map(r => (1 to r).map(1.0 / _).product).sum
+    println(res__)
   }
 }
