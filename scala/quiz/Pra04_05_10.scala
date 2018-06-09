@@ -10,8 +10,11 @@ object Pra04_05_10 {
     lazy val to = 4
     lazy val step = 1
     lazy val list = (from to to by step).toList
-    println(list)
     println(cfrac(list))
+
+    println(cfrac((1 to 20).map(_ => 1).toList)) //  黄金数 φ に収束
+    println(cfrac((1 to 20).map(_ => 2).toList)) // 1+ √ 2 に収束
+    println(cfrac(List(2, 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, 1, 1, 10))) // Math.E に収束
   }
 
   /**
@@ -28,4 +31,6 @@ object Pra04_05_10 {
 
     _rec(list.map(_.toDouble))
   }
+
+  // TODO add reduce.
 }
