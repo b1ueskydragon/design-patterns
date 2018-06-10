@@ -1,4 +1,4 @@
-object max {
+object MaxPra {
 
   def main(args: Array[String]): Unit = {
     println(max(3, 5))

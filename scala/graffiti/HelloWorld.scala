@@ -1,4 +1,4 @@
-object printargs {
+object HelloWorld {
   def main(args: Array[String]): Unit = {
     printargs(Array("Scala", "is", "Fun"))
   }
