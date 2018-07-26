@@ -1,3 +1,5 @@
+package graffiti
+
 object MaxPra {
 
   def main(args: Array[String]): Unit = {

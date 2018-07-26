@@ -1,3 +1,5 @@
+package graffiti
+
 /**
   * コンストラクタの引数について
   *

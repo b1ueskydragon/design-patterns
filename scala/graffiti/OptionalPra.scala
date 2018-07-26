@@ -1,3 +1,5 @@
+package graffiti
+
 object OptionalPra {
   val naaame =
     Map("Me" -> "Aleeex", "You" -> "Rick")

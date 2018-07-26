@@ -1,3 +1,5 @@
+package graffiti
+
 object CaseMatch {
   private def flag(isTrue: Option[Boolean]): Option[String] = isTrue match {
     case Some(true) => Some("1")
