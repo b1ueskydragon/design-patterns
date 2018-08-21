@@ -1,12 +1,14 @@
 package graffiti
 
+case class Pair[T, U](t: T, u: U)
+
 object Closures {
 
-  def cons[T, U](a: T, b: U): () => (T, U) = () => (a, b)
+  def cons[T, U](a: T, b: U): () => Pair[T, U] = () => Pair(a, b)
 
-  def car[T, U](pair: () => (T, U)): T = pair.apply()._1
+  def car[T, U](pair: () => Pair[T, U]): T = pair.apply().t
 
-  def cdr[T, U](pair: () => (T, U)): U = pair.apply()._2
+  def cdr[T, U](pair: () => Pair[T, U]): U = pair.apply().u
 
   def main(args: Array[String]): Unit = {
     val pair = cons('a, 'b)
