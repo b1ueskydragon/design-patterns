@@ -4,11 +4,11 @@ case class Pair[T, U](t: T, u: U)
 
 object Closures {
 
-  def cons[T, U](a: T, b: U): () => Pair[T, U] = () => Pair(a, b)
+  def cons[T, U](a: T, b: U): Pair[T, U] = Pair(a, b)
 
-  def car[T, U](pair: () => Pair[T, U]): T = pair.apply().t
+  def car[T, U](pair: Pair[T, U]): T = pair.t
 
-  def cdr[T, U](pair: () => Pair[T, U]): U = pair.apply().u
+  def cdr[T, U](pair: Pair[T, U]): U = pair.u
 
   def main(args: Array[String]): Unit = {
     val pair = cons('a, 'b)
