@@ -1,5 +1,6 @@
 package graffiti
 
+// Something like Tuple
 case class Pair[T, U](t: T, u: U)
 
 object Closures {

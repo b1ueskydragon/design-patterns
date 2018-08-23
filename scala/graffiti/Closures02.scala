@@ -1,8 +1,9 @@
 package graffiti
 
+// Since type parameter does not take parameters occurs,
+// use asInstanceOf.
 object Closures02 {
-  // Since type parameter does not take parameters occurs,
-  // use asInstanceOf.
+
   def cons[T, U, F](a: T, b: U) = (p: F) => p.asInstanceOf[(T, U) => F](a, b)
 
   def car(p: Any) = p.asInstanceOf[((Any, Any) => Any) => Any]((a: Any, b: Any) => a)

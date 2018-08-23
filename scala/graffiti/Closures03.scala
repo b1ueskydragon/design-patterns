@@ -1,5 +1,6 @@
 package graffiti
 
+// Apply ideas from Closures, Closures01, Closures02
 object Closures03 {
 
   def cons[T, U](a: T, b: U) = (p: (T, U) => _) => p(a, b)
