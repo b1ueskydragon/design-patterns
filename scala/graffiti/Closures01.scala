@@ -4,9 +4,9 @@ object Closures01 {
 
   def cons[T, U](a: T, b: U) = (p: (T, U) => _) => p(a, b)
 
-  def car[T, U](p: ((T, U) => _) => _) = p((a: T, b: U) => a)
+  def car[T, U](p: ((T, U) => _) => T): T = p((a: T, b: U) => a)
 
-  def cdr[T, U](p: ((T, U) => _) => _)  = p((a: T, b: U) => b)
+  def cdr[T, U](p: ((T, U) => _) => U): U = p((a: T, b: U) => b)
 
   def main(args: Array[String]): Unit = {
     val pair = cons('a, 'b)
@@ -15,7 +15,7 @@ object Closures01 {
     println(cdr(pair))
 
     val test = cdr(pairPair)
-    // car(cdr(pairPair)) // TODO
-    println(test)
+    println(test) // debug and confirm args.
+    // car(cdr(pairPair)) // Type Mismatch.
   }
 }
