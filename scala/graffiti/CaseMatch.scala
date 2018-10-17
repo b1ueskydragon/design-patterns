@@ -3,7 +3,7 @@ package graffiti
 object CaseMatch {
   private def flag(isTrue: Option[Boolean]): Option[String] = isTrue match {
     case Some(true) => Some("1")
-    case Some(_) => Some("0")
+    case _ => Some("0")
   }
 
   private def flagMap(isTrue: Option[Boolean]): Option[Int] = isTrue.map(f => if (f) 1 else 0)
