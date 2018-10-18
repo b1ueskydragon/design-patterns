@@ -1,14 +1,11 @@
 package graffiti
 
-import java.util.Scanner
 import scala.util.Random
 
 object MyLunch {
   def main(args: Array[String]): Unit = {
-    //    println(selectLunch(candidates().take(3))) // Enroll 3 menus.
-    val input = List(("a", 30), ("b", 10), ("c", 40), ("d", 20))
-    println(selectLunch(input))
-
+    // only for test.
+    (1 to 20).toList foreach (_ => println(tester()))
   }
 
   /** Weighted random number.
@@ -16,30 +13,46 @@ object MyLunch {
     * String: menu
     * Int: weight
     */
-  def selectLunch(candidates: List[(String, Int)]): List[String] = {
+  def selectLunch(candidates: List[(String, Int)]): String = {
     // total weight.
     val total = candidates.map(_._2).sum
 
-    // random weight.
-    // pick a value randomly from a range 1 to total.
+    // random weight. pick a value randomly from a range 1 to total.
     val random = Random.nextInt(total) + 1
-    candidates.map(pick(_, random))
+
+    _pick(candidates, random)
   }
 
   /** Helper (Recursion) */
-  private def pick(candidate: (String, Int), random: Int): String = {
-    println(random)
-    if (candidate._2 >= random) candidate._1
-    else pick(candidate, random - candidate._2)
+  def _pick(candidates: List[(String, Int)], random: Int): String = candidates match {
+    case h :: _ if h._2 >= random => h._1
+    case h :: tail => _pick(tail, random - h._2)
   }
 
-  private def candidate(): (String, Int) = {
-    val sc = new Scanner(System.in)
-    (sc.next, sc.nextInt)
-  }
+  //  import java.util.Scanner
+  //
+  //  def candidate(): (String, Int) = {
+  //    val sc = new Scanner(System.in)
+  //    (sc.next, sc.nextInt)
+  //  }
+  //
+  //  def candidates(): Stream[(String, Int)] = {
+  //    candidate #:: candidates()
+  //  }
 
-  private def candidates(): Stream[(String, Int)] = {
-    candidate #:: candidates()
+  private def tester() = {
+    val input = List(("a", 30), ("b", 10), ("c", 40), ("d", 20))
+    var a, b, c, d = 0
+
+    (1 to 1000000).toList foreach { _ =>
+      val res = selectLunch(input)
+      if (res == "a") a += 1
+      if (res == "b") b += 1
+      if (res == "c") c += 1
+      if (res == "d") d += 1
+    }
+
+    ((a, b, c, d), a + b + c + d) // expected 3 : 1 : 4 : 2 , SUM=1000000
   }
 }
 
