@@ -4,21 +4,34 @@ object MyLunch {
   implicit def rnd(): WeightedRandom = new WeightedRandom
 
   def main(args: Array[String]): Unit = {
-    // only for test.
-    (1 to 20).toList foreach (_ => println(tester(rnd())))
+    /*
+     * sukiyaki
+     * 300
+     * hamburger
+     * 50
+     * bento-with-salad
+     * 100
+     *
+     * So what's on the menu today?
+     */
+    println(rnd().pick(candidates().take(3).toList))
   }
 
-  //  import java.util.Scanner
-  //
-  //  def candidate(): (String, Int) = {
-  //    val sc = new Scanner(System.in)
-  //    (sc.next, sc.nextInt)
-  //  }
-  //
-  //  def candidates(): Stream[(String, Int)] = {
-  //    candidate #:: candidates()
-  //  }
+  def candidates(): Stream[(String, Int)] = {
+    candidate #:: candidates()
+  }
 
+  def candidate(): (String, Int) = {
+    import java.util.Scanner
+    val sc = new Scanner(System.in)
+    (sc.next, sc.nextInt)
+  }
+
+  /** only for test.
+    *
+    * example.
+    * (1 to 20).toList foreach (_ => println(tester(rnd())))
+    */
   private def tester(rnd: WeightedRandom) = {
     val input = List(("a", 30), ("b", 10), ("c", 40), ("d", 20))
     var a, b, c, d = 0
