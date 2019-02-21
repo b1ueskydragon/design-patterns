@@ -1,6 +1,6 @@
 package graffiti
 
-/** Traversable means `たどれる`
+/** Traversable means `たどれる (走査可能)`
   *
   * N (葉の数)
   * N - 1 (Branch クラスの内部ノードの数)
