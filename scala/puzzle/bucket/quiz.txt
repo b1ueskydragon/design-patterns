@@ -1,0 +1,4 @@
+You have a 12-gallon puzzle.bucket, an 8-gallon puzzle.bucket and a 5-gallon puzzle.bucket.
+The 12-gallon puzzle.bucket is full of water and the other two are empty.
+Without using any additional water how can you divide the twelve gallons of water equally
+so that two of the three buckets have exactly 6 gallons of water in them?
