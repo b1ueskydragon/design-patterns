@@ -2,16 +2,17 @@ package designPatterns.memoization
 
 import java.security.MessageDigest
 
+import com.typesafe.scalalogging.StrictLogging
 import org.apache.commons.codec.binary.Hex
 
-class Hasher extends Memoizer {
+class Hasher extends Memoizer with StrictLogging {
 
   val mem: String => String = memo {
     md5
   }
 
   def md5(input: String): String = {
-    println(s"""input is $input""")
+    logger.debug(s"""input is $input""")
 
     new String(
       Hex.encodeHex(
