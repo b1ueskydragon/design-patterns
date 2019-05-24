@@ -12,6 +12,13 @@ class UsingPattern {
     finally s.close
   }
 
+  // two sources
+  def using(lhs: Source, rhs: Source)(f: Source => Source => Unit) = {
+    f(lhs)(rhs)
+    lhs.close
+    rhs.close
+  }
+
   def fileWAndRm(content: Array[Byte], path: Path)(f2: File => Unit): Unit = {
     val _path = Files.write(path, content)
     f2(_path.toFile)
